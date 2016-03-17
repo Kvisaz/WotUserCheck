@@ -1,12 +1,19 @@
 package ru.kvisaz.wotolenemer.rest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import android.util.Log;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Response;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.io.IOException;
+import java.util.List;
+
+import ru.kvisaz.wotolenemer.Constants;
+import ru.kvisaz.wotolenemer.model.User;
+import ru.kvisaz.wotolenemer.model.WotResp;
+import ru.kvisaz.wotolenemer.view.events.InputEvent;
+import ru.kvisaz.wotolenemer.view.events.UserListEvent;
 
 
 /**
@@ -16,34 +23,36 @@ import retrofit2.Response;
  */
 public class Client {
 
-   /* public static String getPage(String pageCode) throws IOException
-    {
-      return grab(RetrofitFactory.getApiService().loadPage(pageCode));
-    }*/
-
-
-
-    //  Client common functions
-    private static String grab(Call<ResponseBody> call) throws IOException {
-        Response response = call.execute();
-
-        if(!response.isSuccess()){
-            return null;
-        }
-
-        return getAsString((ResponseBody) response.body());
+    public Client(){
+        EventBus.getDefault().register(this);
     }
 
-    private static String getAsString(ResponseBody responseBody) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(responseBody.byteStream()));
-        StringBuilder sb = new StringBuilder("");
-        while(br.ready())
-        {
-            sb.append(br.readLine());
-        }
-        br.close();
+    public void close(){
+        EventBus.getDefault().unregister(this);
+    }
 
-        return sb.toString();
+    public static void getUsers(String checkName){
+        WotResp<List<User>> resp;
+        try{
+            resp = RetrofitFactory
+                    .getApiService()
+                    .findUsers(checkName)
+                    .execute()
+                    .body();
+            EventBus.getDefault().postSticky(new UserListEvent(resp.data));
+        }
+        catch (Exception e)
+        {
+            Log.d(Constants.LOGTAG,"GetUsers Exception");
+            e.printStackTrace();
+        }
+    }
+
+    // --------------------------- Events --------------------------
+    @Subscribe(threadMode = ThreadMode.ASYNC)
+    public void getUsersEvent(InputEvent nameEvent){
+        Log.d(Constants.LOGTAG,"GetUsersEvent start!---------");
+        getUsers(nameEvent.text);
     }
 
 

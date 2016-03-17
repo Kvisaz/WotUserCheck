@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">WOT Olenemer</string>
+    <string name="app_name">WOT User Check</string>
+    <string name="input_hint">Only letters, digits and _ allowed</string>
 </resources>

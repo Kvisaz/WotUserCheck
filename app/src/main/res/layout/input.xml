@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:text="input"
         android:layout_weight="0.8"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_"
+        android:hint="Only letters, digits, _ allowed"
          />
 
     <Button
