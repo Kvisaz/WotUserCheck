@@ -1,7 +1,7 @@
 package ru.kvisaz.wotolenemer.model;
 
 /**
- * Created by Builder on 13.03.2016.
+ *  single user response for wot/account/list  Wargaming API World of Tanks
  */
 public class User {
     public String nickname;

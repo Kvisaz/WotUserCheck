@@ -4,10 +4,10 @@ import java.util.List;
 
 import ru.kvisaz.wotolenemer.model.User;
 
-public class UserListEvent {
+public class ServerUserListEvent {
     public final List<User> users;
 
-    public UserListEvent(List<User> users) {
+    public ServerUserListEvent(List<User> users) {
         this.users = users;
     }
 }

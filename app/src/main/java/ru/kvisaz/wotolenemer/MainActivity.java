@@ -12,18 +12,15 @@ public class MainActivity extends AppCompatActivity {
 
     private InputView inputView;
     private OutputView outputView;
-    private Client client;
+    private AsyncMaster asyncMaster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
     // --------------- Subscribe & UnSubscribe Event Handlers --------------
-
 
     @Override
     protected void onStart() {
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         View rootView = getWindow().getDecorView();
         inputView = new InputView(rootView);
         outputView = new OutputView(rootView);
-        client = new Client();
+        asyncMaster = new AsyncMaster();
     }
 
     @Override
@@ -40,6 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         inputView.close();
         outputView.close();
-        client.close();
+        asyncMaster.close();
     }
 }

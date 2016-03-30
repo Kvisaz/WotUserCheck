@@ -1,12 +1,9 @@
 package ru.kvisaz.wotolenemer.view.events;
 
-/**
- * Created by Builder on 17.03.2016.
- */
-public class LogEvent {
+public class ViewLogEvent {
     public final String message;
 
-    public LogEvent(String message) {
+    public ViewLogEvent(String message) {
         this.message = message;
     }
 }

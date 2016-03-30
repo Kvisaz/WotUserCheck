@@ -2,18 +2,13 @@ package ru.kvisaz.wotolenemer.rest;
 
 import android.util.Log;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import ru.kvisaz.wotolenemer.Constants;
 import ru.kvisaz.wotolenemer.model.User;
+import ru.kvisaz.wotolenemer.model.UserInfo;
 import ru.kvisaz.wotolenemer.model.WotResp;
-import ru.kvisaz.wotolenemer.view.events.InputEvent;
-import ru.kvisaz.wotolenemer.view.events.UserListEvent;
 
 
 /**
@@ -23,15 +18,7 @@ import ru.kvisaz.wotolenemer.view.events.UserListEvent;
  */
 public class Client {
 
-    public Client(){
-        EventBus.getDefault().register(this);
-    }
-
-    public void close(){
-        EventBus.getDefault().unregister(this);
-    }
-
-    public static void getUsers(String checkName){
+    public static  WotResp<List<User>> getUsers(String checkName){
         WotResp<List<User>> resp;
         try{
             resp = RetrofitFactory
@@ -39,21 +26,31 @@ public class Client {
                     .findUsers(checkName)
                     .execute()
                     .body();
-            EventBus.getDefault().postSticky(new UserListEvent(resp.data));
+            return resp;
         }
         catch (Exception e)
         {
             Log.d(Constants.LOGTAG,"GetUsers Exception");
             e.printStackTrace();
+            return null;
         }
     }
 
-    // --------------------------- Events --------------------------
-    @Subscribe(threadMode = ThreadMode.ASYNC)
-    public void getUsersEvent(InputEvent nameEvent){
-        Log.d(Constants.LOGTAG,"GetUsersEvent start!---------");
-        getUsers(nameEvent.text);
+    public static WotResp<Map<String,UserInfo>> getUserInfoList (List<Integer> account_ids) {
+        try{
+            WotResp<Map<String,UserInfo>> resp = RetrofitFactory
+                    .getApiService()
+                    .getUserInfoList(account_ids)
+                    .execute()
+                    .body();
+            return  resp;
+        }
+        catch (Exception e)
+        {
+            Log.d(Constants.LOGTAG,"getUserInfoList Exception");
+            Log.d(Constants.LOGTAG, e.toString());
+            return null;
+        }
     }
-
 
 }

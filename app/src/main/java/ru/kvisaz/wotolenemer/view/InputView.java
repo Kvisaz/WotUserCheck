@@ -10,8 +10,7 @@ import android.widget.EditText;
 import org.greenrobot.eventbus.EventBus;
 
 import ru.kvisaz.wotolenemer.R;
-import ru.kvisaz.wotolenemer.view.events.InputEvent;
-import ru.kvisaz.wotolenemer.view.events.LogEvent;
+import ru.kvisaz.wotolenemer.view.events.ViewSearchUserEvent;
 
 /**
  *   user search and text input
@@ -65,7 +64,7 @@ public class InputView {
     private void postString(String str){
        // проверка минимальной длины
         if(str.length()>=MIN_CHAR_COUNT){
-            EventBus.getDefault().post(new InputEvent(str));
+            EventBus.getDefault().post(new ViewSearchUserEvent(str));
         }
     }
 }

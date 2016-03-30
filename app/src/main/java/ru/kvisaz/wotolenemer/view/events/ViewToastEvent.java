@@ -1,10 +1,8 @@
 package ru.kvisaz.wotolenemer.view.events;
 
-public class InputEvent {
+public class ViewToastEvent {
     public final String text;
-
-
-    public InputEvent(String text) {
+    public ViewToastEvent(String text){
         this.text = text;
     }
 }
