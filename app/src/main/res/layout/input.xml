@@ -1,26 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/Material.Design.Subheading"
+        android:textColor="@color/colorAccent"
+        android:text="@string/input_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
     <EditText
         android:id="@+id/editTextInput"
-        android:layout_width="wrap_content"
+        style="@style/Material.Design.Display1"
+        android:textColor="@color/colorBlack87"
+        android:layout_marginTop="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:drawablePadding="0dp"
+
+
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="input"
-        android:layout_weight="0.8"
         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_"
         android:hint="Only letters, digits, _ allowed"
-         />
 
-    <Button
-        android:id="@+id/btInput"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="" />
+
+    <TextView
+        style="@style/Material.Design.Body1"
+        android:textColor="@color/colorBlack50"
+        android:layout_marginTop="@dimen/space_between"
+        android:text="@string/input_sub_hint"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter"
-        android:layout_weight="0.2"
-        android:minWidth="24dp"
-        />
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+</merge>

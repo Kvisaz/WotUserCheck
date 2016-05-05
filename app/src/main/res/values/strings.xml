@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">WOT User Check</string>
     <string name="input_hint">Only letters, digits and _ allowed</string>
+    <string name="logTag">--Kvisaz.WotOlenemer--</string>
+    <string name="savedStateTopic">playerScore</string>
+    <string name="search_button_title">GO</string>
+    <string name="tab1_title">PLAYERS</string>
+    <string name="tab2_title">INFO</string>
+    <string name="tab2_init_message">No user selected</string>
+    <string name="ui_message_no_users_found">No found</string>
+    <string name="input_title">Search user</string>
+    <string name="input_sub_hint">Type nickname or part of nickname</string>
 </resources>

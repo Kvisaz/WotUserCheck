@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.model;
+package ru.kvisaz.wotolenemer.network.model;
 
 /**
  *  Standard World of Tanks API Server response  13.03.2016

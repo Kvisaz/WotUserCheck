@@ -1,14 +1,11 @@
 package ru.kvisaz.wotolenemer.view.adapter;
 
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import ru.kvisaz.wotolenemer.Constants;
-import ru.kvisaz.wotolenemer.model.User;
+import ru.kvisaz.wotolenemer.network.model.User;
 
 public class UserAdapterDataConverter {
 

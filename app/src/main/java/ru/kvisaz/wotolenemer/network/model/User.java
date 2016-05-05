@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.model;
+package ru.kvisaz.wotolenemer.network.model;
 
 /**
  *  single user response for wot/account/list  Wargaming API World of Tanks

@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.model.stat;
+package ru.kvisaz.wotolenemer.network.model.stat;
 
 /**
  * statistics subclass for UserInfo

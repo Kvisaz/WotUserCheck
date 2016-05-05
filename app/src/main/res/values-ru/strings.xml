@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">WOT User Check</string>
     <string name="input_hint">Только латинские буквы, цифры и _</string>
+    <string name="search_button_title">ИЩИ</string>
+    <string name="tab1_title">ИГРОКИ</string>
+    <string name="tab2_title">СТАТА</string>
+    <string name="tab2_init_message">Игрок ещё не выбран.</string>
+    <string name="ui_message_no_users_found">Нет таких</string>
+    <string name="input_title">Найти игрока</string>
+    <string name="input_sub_hint">Наберите ник игрока в World of Tanks</string>
 </resources>

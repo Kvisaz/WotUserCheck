@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.rest;
+package ru.kvisaz.wotolenemer.network;
 
 import android.util.Log;
 
@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import ru.kvisaz.wotolenemer.Constants;
-import ru.kvisaz.wotolenemer.model.User;
-import ru.kvisaz.wotolenemer.model.UserInfo;
-import ru.kvisaz.wotolenemer.model.WotResp;
+import ru.kvisaz.wotolenemer.network.model.User;
+import ru.kvisaz.wotolenemer.network.model.UserInfo;
+import ru.kvisaz.wotolenemer.network.model.WotResp;
+import ru.kvisaz.wotolenemer.utilits.PreventerServerOverload;
 
 
 /**
@@ -19,6 +20,7 @@ import ru.kvisaz.wotolenemer.model.WotResp;
 public class Client {
 
     public static  WotResp<List<User>> getUsers(String checkName){
+
         WotResp<List<User>> resp;
         try{
             resp = RetrofitFactory
@@ -30,7 +32,7 @@ public class Client {
         }
         catch (Exception e)
         {
-            Log.d(Constants.LOGTAG,"GetUsers Exception");
+            Log.d(Constants.LOG_TAG,"GetUsers Exception");
             e.printStackTrace();
             return null;
         }
@@ -47,8 +49,8 @@ public class Client {
         }
         catch (Exception e)
         {
-            Log.d(Constants.LOGTAG,"getUserInfoList Exception");
-            Log.d(Constants.LOGTAG, e.toString());
+            Log.d(Constants.LOG_TAG,"getUserInfoList Exception");
+            Log.d(Constants.LOG_TAG, e.toString());
             return null;
         }
     }

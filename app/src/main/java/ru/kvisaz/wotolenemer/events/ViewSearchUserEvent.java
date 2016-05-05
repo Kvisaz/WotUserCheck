@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.view.events;
+package ru.kvisaz.wotolenemer.events;
 
 public class ViewSearchUserEvent {
     public final String text;

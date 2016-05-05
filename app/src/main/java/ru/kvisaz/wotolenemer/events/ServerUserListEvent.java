@@ -1,8 +1,8 @@
-package ru.kvisaz.wotolenemer.view.events;
+package ru.kvisaz.wotolenemer.events;
 
 import java.util.List;
 
-import ru.kvisaz.wotolenemer.model.User;
+import ru.kvisaz.wotolenemer.network.model.User;
 
 public class ServerUserListEvent {
     public final List<User> users;

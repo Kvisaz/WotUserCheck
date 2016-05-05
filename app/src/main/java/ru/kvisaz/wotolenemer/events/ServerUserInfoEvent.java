@@ -1,8 +1,8 @@
-package ru.kvisaz.wotolenemer.view.events;
+package ru.kvisaz.wotolenemer.events;
 
 import java.util.List;
 
-import ru.kvisaz.wotolenemer.model.UserInfo;
+import ru.kvisaz.wotolenemer.network.model.UserInfo;
 
 public class ServerUserInfoEvent {
     public final List<UserInfo> userInfos;

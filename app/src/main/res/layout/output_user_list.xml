@@ -2,8 +2,10 @@
 
     <ListView
         android:id="@+id/userListView"
+        style="@style/Material.Design.ListSingleLine"
+        android:layout_marginTop="@dimen/space_between"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         />
 
 </merge>

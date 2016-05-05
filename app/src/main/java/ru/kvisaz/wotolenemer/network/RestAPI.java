@@ -1,15 +1,14 @@
-package ru.kvisaz.wotolenemer.rest;
+package ru.kvisaz.wotolenemer.network;
 
 import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
-import ru.kvisaz.wotolenemer.model.User;
-import ru.kvisaz.wotolenemer.model.UserInfo;
-import ru.kvisaz.wotolenemer.model.WotResp;
+import ru.kvisaz.wotolenemer.network.model.User;
+import ru.kvisaz.wotolenemer.network.model.UserInfo;
+import ru.kvisaz.wotolenemer.network.model.WotResp;
 
 public interface RestAPI {
     String BaseUrl = "https://api.worldoftanks.ru/";

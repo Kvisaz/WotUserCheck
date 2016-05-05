@@ -3,7 +3,7 @@ package ru.kvisaz.wotolenemer.view.adapter;
 import java.util.HashMap;
 
 import ru.kvisaz.wotolenemer.R;
-import ru.kvisaz.wotolenemer.model.User;
+import ru.kvisaz.wotolenemer.network.model.User;
 
 public class UserAdapterMapping {
     public static final String USERNAME_TAG = "nickname";

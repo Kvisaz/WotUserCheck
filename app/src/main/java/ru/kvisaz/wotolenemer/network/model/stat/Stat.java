@@ -1,4 +1,4 @@
-package ru.kvisaz.wotolenemer.model.stat;
+package ru.kvisaz.wotolenemer.network.model.stat;
 
 /**
  *  Статистика для конкретного режима игры World of Tanks

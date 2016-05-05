@@ -3,9 +3,84 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@android:color/transparent</item>
     </style>
+
+    <!-- transparent actionbar -->
+    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="AppTheme">
+        <item name="windowActionBarOverlay">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <!-- Material Design typography
+        - see https://www.google.com/design/spec/
+        standard @style/Base.TextAppearance.AppCompat.Body1
+        defines only fontface, size and color - no line height, no tracking!
+    -->
+    
+    <style name="Material" parent="Base.TextAppearance.AppCompat"></style>
+    <style name="Material.Design"></style>
+
+    <style name="Material.Design.Display4"  parent="Base.TextAppearance.AppCompat.Display4">
+    </style>
+
+    <style name="Material.Design.Display3"  parent="Base.TextAppearance.AppCompat.Display3">
+    </style>
+
+    <style name="Material.Design.Display2"  parent="Base.TextAppearance.AppCompat.Display2">
+        <item name="android:lineSpacingMultiplier">0.9</item>
+    </style>
+
+    <style name="Material.Design.Display1"  parent="Base.TextAppearance.AppCompat.Display1">
+        <item name="android:lineSpacingMultiplier">0.95</item>
+    </style>
+
+    <style name="Material.Design.Headline"  parent="Base.TextAppearance.AppCompat.Headline">
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="Material.Design.Title"  parent="Base.TextAppearance.AppCompat.Title">
+    </style>
+
+    <style name="Material.Design.Subheading"  parent="Base.TextAppearance.AppCompat.Subhead">
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="Material.Design.Body2"  parent="Base.TextAppearance.AppCompat.Body2">
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="Material.Design.Body1" parent="Base.TextAppearance.AppCompat.Body1">
+        <item name="android:lineSpacingMultiplier">1.3</item>
+    </style>
+
+    <style name="Material.Design.Caption"  parent="Base.TextAppearance.AppCompat.Caption">
+    </style>
+
+    <style name="Material.Design.Button"  parent="Base.TextAppearance.AppCompat.Button">
+    </style>
+
+
+    <style name="Material.Design.ListSingleLine">
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="Material.Design.ListSingleLineItem"  parent="Base.TextAppearance.AppCompat.Subhead">
+        <item name="android:height">48dp</item>
+    </style>
+
 
 </resources>

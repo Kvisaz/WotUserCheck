@@ -1,6 +1,6 @@
-package ru.kvisaz.wotolenemer.model;
+package ru.kvisaz.wotolenemer.network.model;
 
-import ru.kvisaz.wotolenemer.model.stat.Statistics;
+import ru.kvisaz.wotolenemer.network.model.stat.Statistics;
 
 /**
  *  wot/account/info  Wargaming API -- Персональные данные игрока
