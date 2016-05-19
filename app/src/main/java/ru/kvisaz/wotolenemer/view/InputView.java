@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -16,6 +17,7 @@ import ru.kvisaz.wotolenemer.App;
 import ru.kvisaz.wotolenemer.R;
 import ru.kvisaz.wotolenemer.events.EventSubscriber;
 import ru.kvisaz.wotolenemer.events.ViewSearchUserEvent;
+import ru.kvisaz.wotolenemer.utilits.CheckNetwork;
 import ru.kvisaz.wotolenemer.utilits.DoubleClickPreventer;
 import ru.kvisaz.wotolenemer.utilits.Keyboard;
 import ru.kvisaz.wotolenemer.utilits.PreventerServerOverload;
@@ -35,6 +37,7 @@ public class InputView extends EventSubscriber {
         setupInputListener();
 
         App.getAppComponent().inject(this);
+
     }
 
     private void setupInputListener() {
@@ -93,7 +96,11 @@ public class InputView extends EventSubscriber {
     private void postString(String str){
        // проверка минимальной длины
         if(str.length()>=MIN_CHAR_COUNT){
-            EventBus.getDefault().post(new ViewSearchUserEvent(str));
+            if(CheckNetwork.isNetworkAvailable(context)){
+                EventBus.getDefault().post(new ViewSearchUserEvent(str));
+            } else{
+                Toast.makeText(context,R.string.ui_message_network_offline,Toast.LENGTH_LONG).show();
+            }
         }
     }
 

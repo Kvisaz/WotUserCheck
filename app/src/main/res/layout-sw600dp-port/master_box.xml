@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ru.kvisaz.wotolenemer.utilits.ResizableImageView
+            android:id="@+id/master_picture_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_01_960_tinyd"
+            android:layout_alignParentTop="true"
+            />
+
+        <LinearLayout
+            android:id="@+id/centerElement"
+            android:layout_below="@id/master_picture_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/material_activity_horizontal_margin"
+            android:paddingRight="@dimen/material_activity_horizontal_margin"
+            android:paddingTop="@dimen/material_activity_horizontal_margin"
+            >
+            <include layout="@layout/input" />
+            <include layout="@layout/detail_output_user_list" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/master_title_bar"
+        style="@style/Material.Design.AppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/material_toolbar_height"
+        android:text="@string/app_name"
+        android:textColor="@color/colorWhite" />
+
+</FrameLayout>
+
+

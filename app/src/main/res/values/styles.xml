@@ -1,26 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="windowActionBarOverlay">true</item>
-        <item name="colorPrimary">@android:color/transparent</item>
-    </style>
-
-    <!-- transparent actionbar -->
-    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="windowActionBarOverlay">true</item>
-        <item name="colorPrimary">@android:color/transparent</item>
-    </style>
-
-    <style name="AppTheme.ActionBar" parent="AppTheme">
-        <item name="windowActionBarOverlay">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 
@@ -29,9 +12,16 @@
         standard @style/Base.TextAppearance.AppCompat.Body1
         defines only fontface, size and color - no line height, no tracking!
     -->
-    
+
+
     <style name="Material" parent="Base.TextAppearance.AppCompat"></style>
     <style name="Material.Design"></style>
+
+    <style name="Material.Design.AppBar" parent="Base.TextAppearance.AppCompat.Title" >
+        <item name="android:layout_height">56dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/material_activity_horizontal_margin</item>
+    </style>
 
     <style name="Material.Design.Display4"  parent="Base.TextAppearance.AppCompat.Display4">
     </style>
@@ -52,6 +42,7 @@
     </style>
 
     <style name="Material.Design.Title"  parent="Base.TextAppearance.AppCompat.Title">
+
     </style>
 
     <style name="Material.Design.Subheading"  parent="Base.TextAppearance.AppCompat.Subhead">
@@ -78,8 +69,15 @@
         <item name="android:divider">@null</item>
     </style>
 
-    <style name="Material.Design.ListSingleLineItem"  parent="Base.TextAppearance.AppCompat.Subhead">
+    <style name="Material.Design.ListSingleLineItemBox" parent="Base.TextAppearance.AppCompat.Subhead">
         <item name="android:height">48dp</item>
+    </style>
+
+    <style name="Material.Design.ListItemText" parent="Base.TextAppearance.AppCompat.Subhead">
+    </style>
+
+    <style name="Material.Design.Divider">
+        <item name="android:alpha">0.38</item>
     </style>
 
 

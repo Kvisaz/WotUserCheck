@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flipboard.bottomsheet.BottomSheetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightLightGray"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/material_space_between_half_half"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/master_box" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/material_space_between_half_half"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/detail_box" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.flipboard.bottomsheet.BottomSheetLayout>

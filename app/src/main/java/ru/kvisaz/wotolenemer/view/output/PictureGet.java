@@ -2,34 +2,33 @@ package ru.kvisaz.wotolenemer.view.output;
 
 import java.util.Random;
 
+import retrofit2.http.GET;
 import ru.kvisaz.wotolenemer.R;
 
 public class PictureGet {
-    private final static float VERYLOW_RATE = 48;
-    private final static float LOW_RATE = 50;
-    private final static float MID_RATE = 53;
-    private final static float GOOD_RATE = 58;
-    private final static float BEST_RATE = 100;
 
     private final static Random random = new Random();
 
-    public static int getPictureResforRating(float rating) {
-        int res = R.drawable.rate2_low_kv;
-
-        if (rating < VERYLOW_RATE) {
-            res = getVeryLowPicture();
-        } else if (rating < LOW_RATE) {
-            res = getLowPicture();
-        } else if (rating < MID_RATE) {
-            res = getMidPicture();
-        } else if (rating < GOOD_RATE) {
-            res = getGoodPicture();
-        } else { // best!
-            res = getBestPicture();
+    public static int getPictureResforRating(int rate) {
+        switch(rate){
+            case 0:
+                return getNoobPicture();
+            case 1:
+                return getVeryLowPicture();
+            case 2:
+                return getLowPicture();
+            case 3:
+                return getMidPicture();
+            case 4:
+                return getGoodPicture();
+            default:
+                return getBestPicture();
         }
-        return res;
     }
 
+    private static int getNoobPicture() {
+        return R.drawable.rate0_noob;
+    }
 
     private static int getVeryLowPicture() {
         return R.drawable.rate1_verylow_proh;

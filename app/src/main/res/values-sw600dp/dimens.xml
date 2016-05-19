@@ -1,0 +1,37 @@
+<resources>
+    <!-- App dimens -->
+    <dimen name="top_picture_height">@dimen/material_toolbar_height6x</dimen>
+    <item name="weight_top" format="float" type="dimen">0.4</item>
+    <item name="weight_bottom" format="float" type="dimen">0.6</item>
+
+    <!-- Material Design dimens margins, per the Android Design guidelines. -->
+    <dimen name="material_activity_horizontal_margin">24dp</dimen>
+    <dimen name="material_activity_vertical_margin">24dp</dimen>
+    <dimen name="material_content_left_margin">56dp</dimen>
+    <dimen name="material_content_afer_icon_left_margin">56dp</dimen>
+
+    <dimen name="material_status_bar_height">24dp</dimen>
+
+    <dimen name="material_toolbar_height">64dp</dimen>
+    <dimen name="material_toolbar_height2x">128dp</dimen>
+    <dimen name="material_toolbar_height3x">192dp</dimen>
+    <dimen name="material_toolbar_height4x">256dp</dimen>
+    <dimen name="material_toolbar_height5x">320dp</dimen>
+    <dimen name="material_toolbar_height6x">384dp</dimen>
+
+    <dimen name="material_title_height">80dp</dimen>
+    <dimen name="material_subtitle_height">48dp</dimen>
+    <dimen name="material_list_item_height">64dp</dimen>
+
+    <dimen name="material_space_between">8dp</dimen>
+
+
+    <dimen name="material_card_left_right_padding">24dp</dimen>
+    <dimen name="material_card_content_left_height">104dp</dimen>
+
+    <dimen name="material_card_list_item_height">72dp</dimen>
+
+
+
+
+</resources>

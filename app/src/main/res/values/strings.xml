@@ -1,13 +1,51 @@
 <resources>
     <string name="app_name">WOT User Check</string>
-    <string name="input_hint">Only letters, digits and _ allowed</string>
-    <string name="logTag">--Kvisaz.WotOlenemer--</string>
-    <string name="savedStateTopic">playerScore</string>
-    <string name="search_button_title">GO</string>
-    <string name="tab1_title">PLAYERS</string>
-    <string name="tab2_title">INFO</string>
-    <string name="tab2_init_message">No user selected</string>
+    <string name="input_hint">Type nick</string>
+    <string name="logTag">--Kvisaz.Wot User Finder--</string>
+
+
+    <string name="ui_message_network_offline">No Internet connection</string>
     <string name="ui_message_no_users_found">No found</string>
+
     <string name="input_title">Search user</string>
-    <string name="input_sub_hint">Type nickname or part of nickname</string>
+    <string name="input_sub_hint">Only letters, digits and _ allowed</string>
+
+    <string name="info_win_text">% of wins</string>
+    <string name="info_rate0_status">Trainee. Just started&#8230;</string>
+    <string name="info_rate1_status">Very low skill</string>
+    <string name="info_rate2_status">Low skill</string>
+    <string name="info_rate3_status">Mid skill</string>
+    <string name="info_rate4_status">Good skill</string>
+    <string name="info_rate5_status">Best tank fighter</string>
+
+    <string name="prefix_battles_total">Battles -</string>
+    <string name="prefix_battles_random">Random battles - </string>
+    <string name="prefix_date_reg">Created at </string>
+    <string name="prefix_date_last">Last battle - </string>
+    <string name="prefix_ratingTitle">Rating</string>
+    <string name="prefix_ratingDesc">Global rating in World of Tanks</string>
+    <string name="prefix_killedEnemiesTotal">Frags</string>
+    <string name="prefix_killedEnemiesAverage">Frags per battle -</string>
+    <string name="prefix_shootsPerBattle">Shots per battle</string>
+    <string name="prefix_hitsPerBattle">Hits -</string>
+    <string name="prefix_piercesPerBattle">Piercings -</string>
+    <string name="prefix_scoutExploredTotal">Spotted -</string>
+    <string name="prefix_scoutExploredAverage">Spotted per battle -</string>
+    <string name="prefix_scoutDamaged">Assisted damage for spotted -</string>
+    <string name="prefix_caterpillarDamaged">Assisted damage for track -</string>
+
+
+    <string name="prefix_baseCaptureAverage">Avg. base capture points -</string>
+    <string name="prefix_baseDefenseAverage">Avg. base dropped points -</string>
+    <string name="prefix_languageTitle">Language</string>
+    <string name="prefix_languageDesc">Selected language in game -</string>
+
+    <string name="info_shared_title">Share or save&#8230;</string>
+    <string name="info_shared_postfix">% wins in World of Tanks</string>
+    <string name="info_shared_subject">Percent of wins</string>
+
+    <string name="start_title">How to use</string>
+    <string name="start_message1">1. Input name or nickname</string>
+    <string name="start_message2">2. Find gamer</string>
+    <string name="start_message3">3. See percent of wins, average hits and so on&#8230;</string>
 </resources>

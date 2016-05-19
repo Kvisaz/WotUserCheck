@@ -3,19 +3,19 @@ package ru.kvisaz.wotolenemer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
-import ru.kvisaz.wotolenemer.events.ServerUserInfoEvent;
+import ru.kvisaz.wotolenemer.events.ShowUserInHistoryEvent;
 import ru.kvisaz.wotolenemer.view.DetailBoxView;
 
 public class DetailActivity extends AppCompatActivity {
     private DetailBoxView detailBoxView;
+
+    private TextView titleBarTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,24 @@ public class DetailActivity extends AppCompatActivity {
 
         View rootView = getWindow().getDecorView();
         detailBoxView = new DetailBoxView(rootView);
+
+//        setupTitle();
+
+    }
+
+    private void setupTitle() {
+        titleBarTextView = (TextView)findViewById(R.id.detail_title_bar);
+        titleBarTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_navigate_before,
+                0,0,0);
+        titleBarTextView.setClickable(true);
+        titleBarTextView.setOnClickListener(new BackPressListener());
+    }
+
+    private class BackPressListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            onBackPressed();
+        }
     }
 
     // --------------- Subscribe & UnSubscribe Event Handlers --------------
@@ -31,16 +49,15 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
         detailBoxView.registerEventBus();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        EventBus.getDefault().unregister(this);
         detailBoxView.unregisterEventBus();
     }
+
 
     // --------------- Make home buttom as back button --------------
     @Override
@@ -59,18 +76,5 @@ public class DetailActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
-    // ------------------ EventBus Handling for Title -----------------------
-    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void onUserInfoList(ServerUserInfoEvent event){
 
-        if(event.userInfos==null || event.userInfos.size()<1) {
-            return;
-        }
-
-        String name = event.userInfos.get(0).nickname;
-        ActionBar bar = getSupportActionBar();
-        if(bar!=null && name!=null){
-            bar.setTitle(name);
-        }
-    }
 }

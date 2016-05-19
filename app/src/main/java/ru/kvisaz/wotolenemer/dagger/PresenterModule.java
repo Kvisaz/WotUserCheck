@@ -9,10 +9,13 @@ import ru.kvisaz.wotolenemer.Presenter;
 
 @Module
 public class PresenterModule {
+    private final Presenter presenter;
+    public PresenterModule(Context context){
+        presenter = new Presenter(context);
+    }
 
     @Provides
-    @Singleton
-    Presenter providesPresenter(Context context){
-        return new Presenter(context);
+    Presenter providesPresenter(){
+        return presenter;
     }
 }

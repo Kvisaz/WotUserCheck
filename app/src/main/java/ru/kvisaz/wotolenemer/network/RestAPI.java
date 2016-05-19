@@ -12,15 +12,15 @@ import ru.kvisaz.wotolenemer.network.model.WotResp;
 
 public interface RestAPI {
     String BaseUrl = "https://api.worldoftanks.ru/";
-    String appId = "application_id=demo";
+    //String appId = "application_id="; // String appId = "application_id=demo"  // for test
     int resultLimit = 50;
     String resQuery = "limit="+resultLimit;
 
-    @GET("wot/account/list/?"+resQuery+"&"+appId)
-    Call<WotResp<List<User>>> findUsers(@Query("search") String search);
+    @GET("wot/account/list/?"+resQuery)
+    Call<WotResp<List<User>>> findUsers(@Query("search") String search,@Query("application_id") String appId);
 
     String infoExtrasQuery = "extra=statistics.random%2Cstatistics.fallout%2Cstatistics.globalmap_absolute%2Cstatistics.globalmap_champion%2Cstatistics.globalmap_middle";
-    @GET("wot/account/info/?"+appId+"&"+infoExtrasQuery)
-    Call<WotResp<Map<String, UserInfo>>> getUserInfoList(@Query("account_id") List<Integer> account_ids);
+    @GET("wot/account/info/?"+infoExtrasQuery)
+    Call<WotResp<Map<String, UserInfo>>> getUserInfoList(@Query("account_id") List<Integer> account_ids,@Query("application_id") String appId);
 
 }

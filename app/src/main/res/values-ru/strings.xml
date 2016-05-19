@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">WOT User Check</string>
-    <string name="input_hint">Только латинские буквы, цифры и _</string>
-    <string name="search_button_title">ИЩИ</string>
-    <string name="tab1_title">ИГРОКИ</string>
-    <string name="tab2_title">СТАТА</string>
-    <string name="tab2_init_message">Игрок ещё не выбран.</string>
-    <string name="ui_message_no_users_found">Нет таких</string>
+    <string name="app_name">WoT Статомер</string>
+    <string name="input_hint">Введите ник&#8230;</string>
+    <string name="logTag">--Kvisaz.Wot User Finder--</string>
+
+
+    <string name="ui_message_network_offline">Не подключен Интернет</string>
+    <string name="ui_message_no_users_found">Никого не найдено</string>
+
     <string name="input_title">Найти игрока</string>
-    <string name="input_sub_hint">Наберите ник игрока в World of Tanks</string>
+    <string name="input_sub_hint">Латинские буквы и цифры, _</string>
+
+    <string name="info_win_text">% побед</string>
+    <string name="info_rate0_status">Только начал играть&#8230;</string>
+    <string name="info_rate1_status">В игре отдыхает</string>
+    <string name="info_rate2_status">Так себе. </string>
+    <string name="info_rate3_status">Нормальный. </string>
+    <string name="info_rate4_status">Хороший игрок</string>
+    <string name="info_rate5_status">Мастер-танкист.</string>
+
+    <string name="prefix_battles_total">Всего боев -</string>
+    <string name="prefix_battles_random">Боев в рандомe - </string>
+    <string name="prefix_date_reg">Создал аккаунт </string>
+    <string name="prefix_date_last">Последний бой </string>
+    <string name="prefix_ratingTitle">Рейтинг</string>
+    <string name="prefix_ratingDesc">Глобальный рейтинг по Wargaming</string>
+    <string name="prefix_killedEnemiesTotal">Уничтожил врагов</string>
+    <string name="prefix_killedEnemiesAverage">В среднем за бой -</string>
+    <string name="prefix_shootsPerBattle">Выстрелов за бой</string>
+    <string name="prefix_hitsPerBattle">Попал -</string>
+    <string name="prefix_piercesPerBattle">Пробил -</string>
+    <string name="prefix_scoutExploredTotal">Засветил врагов -</string>
+    <string name="prefix_scoutExploredAverage">Засветил за бой -</string>
+    <string name="prefix_scoutDamaged">Урон по чистому засвету -</string>
+    <string name="prefix_caterpillarDamaged">Урон по сбитой гусле -</string>
+
+
+    <string name="prefix_baseCaptureAverage">Очков захвата в среднем -</string>
+    <string name="prefix_baseDefenseAverage">Очков защиты базы в среднем -</string>
+    <string name="prefix_languageTitle">Язык в игре</string>
+    <string name="prefix_languageDesc">Выбранный язык в клиенте WoT -</string>
+
+    <string name="info_shared_title">Отправить или сохранить&#8230;</string>
+    <string name="info_shared_postfix">% побед в World of Tanks</string>
+    <string name="info_shared_subject">Процент побед</string>
+
+    <string name="start_title">Инструкция</string>
+    <string name="start_message1">1. Введите ник или часть ника</string>
+    <string name="start_message2">2. Найдите игрока</string>
+    <string name="start_message3">3. Посмотрите процент побед, число попаданий и т.д.</string>
+
 </resources>

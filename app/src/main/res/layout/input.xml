@@ -18,12 +18,10 @@
         android:paddingRight="0dp"
         android:drawablePadding="0dp"
 
-
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_"
-        android:hint="Only letters, digits, _ allowed"
+        android:hint="@string/input_hint"
 
         android:lines="1"
         android:singleLine="true"
@@ -32,7 +30,7 @@
     <TextView
         style="@style/Material.Design.Body1"
         android:textColor="@color/colorBlack50"
-        android:layout_marginTop="@dimen/space_between"
+        android:layout_marginTop="0dp"
         android:text="@string/input_sub_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

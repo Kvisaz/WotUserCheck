@@ -17,6 +17,7 @@ public class App extends Application {
     protected AppComponent buildAppComponent(){
         return DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
+                .presenterModule(new PresenterModule(this))
                 .build();
     }
 
@@ -25,9 +26,5 @@ public class App extends Application {
         super.onCreate();
         appComponent = buildAppComponent();
         Constants.getResources(this);
-
-        Presenter presenter = new Presenter(this);
-        presenter.registerEventBus();
-
     }
 }

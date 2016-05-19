@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -22,6 +21,7 @@ import ru.kvisaz.wotolenemer.events.EventSubscriber;
 import ru.kvisaz.wotolenemer.events.ServerUserListEvent;
 import ru.kvisaz.wotolenemer.network.model.User;
 import ru.kvisaz.wotolenemer.utilits.DoubleClickPreventer;
+import ru.kvisaz.wotolenemer.utilits.Keyboard;
 import ru.kvisaz.wotolenemer.view.adapter.UserAdapterDataConverter;
 import ru.kvisaz.wotolenemer.view.adapter.UserAdapterMapping;
 import ru.kvisaz.wotolenemer.events.ViewSelectUserIdEvent;
@@ -33,13 +33,14 @@ public class OutputUserList  extends EventSubscriber {
     private ArrayList<Map<String,String>> userListMap;
     private final SimpleAdapter adapter;
     private final ListView userListView;
-    private final Context context;
+
+    Context contextOfView;
 
     public OutputUserList(View rootView){
+        contextOfView = rootView.getContext();
         userListMap = UserAdapterDataConverter.getData(new ArrayList<User>());
-        context = rootView.getContext();
 
-        adapter = new SimpleAdapter(context,
+        adapter = new SimpleAdapter(contextOfView,
                 userListMap,
                 R.layout.user,
                 UserAdapterMapping.from,
@@ -65,13 +66,14 @@ public class OutputUserList  extends EventSubscriber {
         adapter.notifyDataSetChanged();
     }
 
-    // todo   post special event with user id
     private class UserClickListener implements android.widget.AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // disable double action
             if(DoubleClickPreventer.isDisableClick()) return;
             DoubleClickPreventer.disableClick();
+
+            Keyboard.hide(view); // hide keyboard if shown.
 
             Map<String,String> mapUserInfo = (Map)adapter.getItem(position);
             int accountId = Integer.parseInt(mapUserInfo.get(UserAdapterMapping.ACCOUNT_ID_TAG));

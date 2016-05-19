@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"
+            android:theme="@style/AppTheme"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
 
         <activity android:name=".DetailActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"
+            android:theme="@style/AppTheme"
             >
 
             <meta-data

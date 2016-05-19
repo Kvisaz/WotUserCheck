@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info_win_percent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/info_win_percent_percent"
+        style="@style/Material.Design.Display3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="@dimen/material_text_alpha_base"
+        android:text=""
+        android:textColor="@color/colorRate3Mid" />
+
+    <TextView
+        android:id="@+id/info_win_percent_text"
+        style="@style/Material.Design.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/info_win_percent_percent"
+        android:layout_toRightOf="@id/info_win_percent_percent"
+        android:text="@string/info_win_text" />
+
+    <TextView
+        android:id="@+id/info_status"
+        style="@style/Material.Design.Title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/material_subtitle_height"
+        android:layout_below="@id/info_win_percent_percent"
+        android:background="@color/colorRate3Mid"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/material_space_between"
+        android:text=""
+        android:textColor="@color/colorWhite87"
+
+        />
+
+</RelativeLayout>

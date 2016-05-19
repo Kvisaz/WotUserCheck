@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="speedTestRangeValues">
-        <item>0</item>
-        <item>100</item>
-        <item>200</item>
-        <item>300</item>
-        <item>500</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>5000</item>
-    </string-array>
+
+    <array name="colorsRate">
+        <item>@color/colorRate0Noob</item>
+        <item>@color/colorRate1VeryLow</item>
+        <item>@color/colorRate2Low</item>
+        <item>@color/colorRate3Mid</item>
+        <item>@color/colorRate4Good</item>
+        <item>@color/colorRate5Best</item>
+    </array>
 </resources>

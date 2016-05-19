@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <ru.kvisaz.wotolenemer.utilits.ResizableImageView
         android:id="@+id/master_picture_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitStart"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:src="@drawable/main_01_960_tinyd" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="@dimen/weight_top"
-            android:text="" />
+            <LinearLayout
+                android:id="@+id/centerElement"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/material_toolbar_height2x"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/material_activity_horizontal_margin"
+                android:paddingRight="@dimen/material_activity_horizontal_margin"
+                android:paddingTop="@dimen/material_space_between"
+                >
+                <include layout="@layout/input" />
+            </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="@dimen/weight_bottom"
+            android:layout_height="match_parent"
             android:background="@color/colorWhite"
             android:orientation="vertical"
-            android:padding="@dimen/activity_horizontal_margin">
+            android:paddingLeft="@dimen/material_activity_horizontal_margin"
+            android:paddingRight="@dimen/material_activity_horizontal_margin"
+            android:layout_below="@id/centerElement"
+            >
 
-            <include layout="@layout/input" />
-
-            <include layout="@layout/output_user_list" />
+            <include layout="@layout/detail_output_user_list" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/master_title_bar"
+        style="@style/Material.Design.AppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/material_toolbar_height"
+        android:text="@string/app_name"
+        android:textColor="@color/colorWhite" />
+
+
 
 </FrameLayout>
 

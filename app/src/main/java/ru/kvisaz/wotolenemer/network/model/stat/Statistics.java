@@ -1,9 +1,13 @@
 package ru.kvisaz.wotolenemer.network.model.stat;
 
+import java.io.Serializable;
+
 /**
  * statistics subclass for UserInfo
  */
-public class Statistics {
+public class Statistics implements Serializable {
+    public Long _id; // for cupboard
+
     public Stat all; // Суммарная статистика по Случайным, Ротным и клановым боям без учёта статистики боёв на Глобальной Карте 2.0
     public Stat clan;      // Статистика боёв в составе клана
     public Stat company;  // Статистика боёв в составе роты
